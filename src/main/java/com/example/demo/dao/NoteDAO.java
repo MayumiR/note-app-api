@@ -1,6 +1,5 @@
 package com.example.demo.dao;
 
-import com.example.demo.dto.NoteDto;
 import com.example.demo.entity.Note;
 import com.example.demo.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,11 @@ public class NoteDAO {
     NoteRepository noteRepo;
 
   //  public Note saveNote(Note note){
-    public NoteDto saveNote(NoteDto note){
+    //public NoteDto saveNote(NoteDto note){
+    public Note saveNote(Note note){
        // return noteRepo.save(note);
-        return noteRepo.save(note.toEntity()).toDto();
+        return noteRepo.save(note);
+       // return noteRepo.save(note.toEntity()).toDto();
 
     }
 
